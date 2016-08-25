@@ -1,0 +1,70 @@
+﻿<tn:TaskbarNotifier x:Class="WPFTaskbarNotifier.ExampleTaskbarNotifier"
+    xmlns:tn="clr-namespace:WPFTaskbarNotifier;assembly=WPFTaskbarNotifier"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  x:Name="ThisControl"
+    Title="المُذكـــــــر" 
+   WindowStyle="None"
+                    ShowInTaskbar="False"  Height="{Binding ElementName=ThisControl, Path=Hauteur}"  Width="{Binding ElementName=ThisControl, Path=Large}">
+
+    <tn:TaskbarNotifier.Resources>
+       
+            <tn:PersonImageConverter x:Key="imageConverter"/>
+        
+        <DataTemplate x:Key="ItemsTemplate" DataType="{x:Type tn:TaskbarNotifier}">
+
+
+
+            <StackPanel   >
+                <!-- Person's image SizeToContent="Height" AllowsTransparency="True" Background="{x:Null}" -->
+
+                <Image  
+                           Source="{Binding Path=Message, Converter={StaticResource imageConverter}}" Stretch="Fill" MaxWidth="{Binding ElementName=ThisControl, Path=Large}" MaxHeight="{Binding ElementName=ThisControl, Path=Hauteur}">
+                        <!--on appel fct convert ki s aplik sur imageRef  -->
+                        <!--Image.BitmapEffect> 
+                <DropShadowBitmapEffect />
+            </Image.BitmapEffect-->
+
+                    </Image>
+               
+
+            </StackPanel>
+          
+        </DataTemplate>
+
+    </tn:TaskbarNotifier.Resources>
+    
+    
+
+   
+        <!-- Person's name -->
+   
+        
+      
+            <!-- Person's image -->
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="472*" />
+         
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="288*" />
+        </Grid.RowDefinitions>
+
+        <ItemsControl   Name="ItemsList"  ItemsSource="{Binding ElementName=ThisControl, Path=NotifyContent}"
+                      ItemTemplate="{StaticResource ItemsTemplate}" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>  
+        <!-- lordre definit qui pt etre under l autre :p -->
+        <Button Click="HideButton_Click" BorderBrush="#FF1C3FB3"  Grid.Column="1" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Top">
+            <Button.Background>
+                <ImageBrush ImageSource="/Nibrass;component/Images/close.png" />
+            </Button.Background>
+        </Button>
+    </Grid>
+</tn:TaskbarNotifier>
+         

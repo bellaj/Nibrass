@@ -1,0 +1,2 @@
+taskkill /F /IM Nibrass.exe /T
+rename Nibrass_new.exe Nibrass.exe

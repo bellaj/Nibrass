@@ -1,0 +1,80 @@
+﻿<tn:TaskbarNotifier x:Class="WPFTaskbarNotifierExample.ExampleTaskbarNotifier"
+    xmlns:tn="clr-namespace:WPFTaskbarNotifier;assembly=WPFTaskbarNotifier"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Taskbar Notifier Example" Height="208"  Width="362"
+    x:Name="ThisControl"
+    >
+    <tn:TaskbarNotifier.Resources>
+
+        <DataTemplate x:Key="ItemsTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+             
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock Text=": " FontSize="24" /> 
+                    <TextBlock  Text="{Binding Path=Title}" FontSize="20" />
+                   
+                </StackPanel>
+                <Label Grid.Column="1" Grid.Row="1" Margin="0,-1,0,0" HorizontalAlignment="Right"  >
+                  
+                        <TextBlock Text="{Binding Path=Message}" TextWrapping="Wrap" FontSize="22" />
+                   
+                </Label>
+            </Grid>
+        </DataTemplate>
+
+    </tn:TaskbarNotifier.Resources>
+
+    <Border BorderThickness="1" BorderBrush="Black" Height="157" Width="331"> 
+                <Grid Margin="5,5,5,5" Height="140" Width="309">
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="90" />
+                        <RowDefinition Height="37" />
+                        <RowDefinition Height="6"  />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="15" Height="15" Click="HideButton_Click">
+                        <Button.ToolTip>Hide</Button.ToolTip>
+                        <Image>
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Pen>
+                                                <Pen Brush="Black" Thickness="3"/>
+                                            </GeometryDrawing.Pen>
+                                            <GeometryDrawing.Geometry >
+                                                <GeometryGroup>
+                                                    <LineGeometry StartPoint="0,0" EndPoint="20,20"/>
+                                                    <LineGeometry StartPoint="20,0" EndPoint="0,20"/>
+                                                </GeometryGroup>
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
+                    </Button>
+
+                
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,69,0,0" Grid.RowSpan="3"></ScrollViewer>
+                    <ItemsControl Name="ItemsList" BorderThickness="0" ItemsSource="{Binding ElementName=ThisControl, Path=NotifyContent}" ItemTemplate="{StaticResource ItemsTemplate}" Margin="15,9,53,19" Grid.RowSpan="2">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" Width="Auto" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Grid>
+ 
+    </Border>
+</tn:TaskbarNotifier>

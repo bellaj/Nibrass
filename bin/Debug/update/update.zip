@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>404 Page Not Found!</title>
+<link rel="stylesheet" type="text/css" href="/404/style.css" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-950416-53']);
+  _gaq.push(['_setDomainName', '.zymic.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+<div id="container">
+    <div id="logo">
+    	<a href="http://www.zymic.com/"><img src="/404/images/logo.png" alt=""/></a>
+    </div>
+    <div id="main">
+    	<h2><img src="/404/images/error.png" alt="" /> 404 Page Not Found!</h2>     
+        <p>The address you have entered has not been found. This may be due to an outdated link, typo or a page no longer on our system.</p>
+        <p>This website is hosted freely by <a href="http://www.zymic.com/free-web-hosting/" title="Get your free website">Zymic Free Web Hosting</a>.</p>
+        <p>Our free web hosting comes with PHP, MySQL, FTP, and a web based control panel. But best of all, AD-FREE!</p>
+        <p align="center"><a href="http://www.zymic.com/free-web-hosting/"><img src="/404/images/learn-more404.png" alt="Get your free website" width="451" height="61" /></a></p>
+  	</div>
+</div>
+<SCRIPT TYPE="text/javascript" SRC="http://ad.xtendmedia.com/st?ad_type=pop&ad_size=0x0&entity=125528&site_code=zymic404&section_code=INSERT_SECTION_CODE_HERE&banned_pop_types=28&pop_times=1&pop_frequency=86400"></SCRIPT>
+</body>
+</html>
